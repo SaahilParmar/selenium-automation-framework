@@ -1,4 +1,4 @@
-name: Run Pytest with Selenium
+name: Run Pytest Without Artifacts
 
 on:
   push:
@@ -11,43 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout Code
       uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: "3.12"
 
-    - name: Install Google Chrome
+    - name: Install Chrome
       run: |
         sudo apt update
         sudo apt install -y wget gnupg2
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt install -y ./google-chrome-stable_current_amd64.deb
-        google-chrome --version
 
     - name: Install ChromeDriver
       run: |
         sudo apt install -y chromium-chromedriver
         sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-        chromedriver --version
 
-    - name: Set up virtual environment
+    - name: Install Dependencies
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Selenium Pytest Tests
+    - name: Run Pytest Only
       run: |
         source venv/bin/activate
-        pytest --browser chrome --headless --alluredir=reports/
-
-    - name: Upload Allure Report (optional)
-      uses: actions/upload-artifact@v4
-      with:
-        name: allure-report
-        path: reports/
-        retention-days: 3
+        pytest --browser chrome --headless
