@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ```bash
 pytest --browser chrome --headless --alluredir=reports/
 ```
-##### Reference Image for test run for headless.
+##### Reference Image for test run for Chrome + Headless.
 ![Test Run](assets/11_test_pass.jpg)
 
 
@@ -67,7 +67,7 @@ pytest --browser chrome --headless --alluredir=reports/
 ```bash
 pytest --browser chrome --alluredir=reports/
 ```
-
+![Test Run](assets/non_head.jpg)
 
 
 
@@ -77,12 +77,26 @@ pytest --browser chrome --alluredir=reports/
 > Make sure you have Allure installed:
 > [Installation Guide → https://docs.qameta.io/allure/]
 
+
 ### 5.1 To Serve the Report:
 ```bash
 allure serve reports/
 ```
-
 This opens an interactive test report in your browser.
+![Report 1](assets/report_1.jpg)
+![Report 2](assets/report_2.jpg)
+![Report 3](assets/report_3.jpg)
+![Report 4](assets/report_4.jpg)
+![Report 5](assets/report_5.jpg)
+![Report 6](assets/report_6.jpg)
+![Report 7](assets/report_7.jpg)
+![Report 8](assets/report_8.jpg)
+
+
+
+
+
+
 ## 6. 🛠 Available CLI Options
 
 
