@@ -54,7 +54,6 @@ pip install -r requirements.txt
 
 ## 4. 🧪 Running the Tests
 
-
 ### 4.1 Basic Test Run (Chrome + Headless)
 ```bash
 pytest --browser chrome --headless --alluredir=reports/
@@ -64,12 +63,14 @@ pytest --browser chrome --headless --alluredir=reports/
 
 
 
-
-
 ### 4.2 Run with Visible Browser (Non-headless)
 ```bash
 pytest --browser chrome --alluredir=reports/
 ```
+
+
+
+
 ## 5. 📊 View Allure Report
 
 
@@ -106,6 +107,10 @@ It runs on every push to `main`:
 - ✅ Optionally uploads results
 
 > To trigger: simply `git push` your code!
+
+
+
+
 ## 8. 🐛 Troubleshooting
 
 All known errors and solutions have been logged in:
@@ -120,6 +125,20 @@ This includes:
 - NoSuchElement exceptions
 - GitHub Actions failures
 - Push errors and LFS issues
+
+
+##### Reference Image for chrome installation.
+![Chrome Installation 1](assets/1_chrome_install.jpg)
+![Chrome Installation 2](assets/2_chrome_install.jpg)
+![Chrome Installation 3](assets/3_chrome_install.jpg)
+![Chrome Installation 4](assets/4_chrome_install.jpg)
+![Chrome Installation 5](assets/5_chrome_install.jpg)
+![Chrome Installation 6](assets/6_chrome_install.jpg)
+![Chrome Installation 7](assets/7_chrome_install.jpg)
+
+
+
+
 ## 9. 🖼️ Screenshots
 
 
@@ -127,6 +146,10 @@ This includes:
 *(Place your screenshot in `assets/` folder and reference it)*
 
 ![Allure Report](assets/allure_report_sample.png)
+
+
+
+
 ## 10. 📌 Dependencies
 
 - `selenium`
@@ -138,6 +161,10 @@ Install all using:
 ```bash
 pip install -r requirements.txt
 ```
+
+
+
+
 ## 11. 🔖 License
 
 This project is licensed under the **MIT License**.
