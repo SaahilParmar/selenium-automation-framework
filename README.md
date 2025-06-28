@@ -46,6 +46,12 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+##### Reference Image for installing dependencies.
+![Requirements](assets/9_requirements.jpg)
+
+
+
+
 ## 4. 🧪 Running the Tests
 
 
@@ -53,6 +59,12 @@ pip install -r requirements.txt
 ```bash
 pytest --browser chrome --headless --alluredir=reports/
 ```
+##### Reference Image for test run for headless.
+![Test Run](assets/11_test_pass.jpg)
+
+
+
+
 
 ### 4.2 Run with Visible Browser (Non-headless)
 ```bash
