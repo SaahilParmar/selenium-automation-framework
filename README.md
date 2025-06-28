@@ -84,14 +84,6 @@ allure serve reports/
 ```
 This opens an interactive test report in your browser.
 ![Report 1](assets/report_1.jpg)
-![Report 2](assets/report_2.jpg)
-![Report 3](assets/report_3.jpg)
-![Report 4](assets/report_4.jpg)
-![Report 5](assets/report_5.jpg)
-![Report 6](assets/report_6.jpg)
-![Report 7](assets/report_7.jpg)
-![Report 8](assets/report_8.jpg)
-
 
 
 
@@ -157,9 +149,13 @@ This includes:
 
 
 ### 9.1 Allure Report Sample:
-*(Place your screenshot in `assets/` folder and reference it)*
-
-![Allure Report](assets/allure_report_sample.png)
+![Report 2](assets/report_2.jpg)
+![Report 3](assets/report_3.jpg)
+![Report 4](assets/report_4.jpg)
+![Report 5](assets/report_5.jpg)
+![Report 6](assets/report_6.jpg)
+![Report 7](assets/report_7.jpg)
+![Report 8](assets/report_8.jpg)
 
 
 
