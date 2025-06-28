@@ -1,0 +1,176 @@
+
+# Selenium Automation Framework ✅
+
+A complete **Selenium + Pytest test automation framework** designed for cross-browser testing, Allure reporting, and CI/CD integration with GitHub Actions.
+
+
+## 1. 📁 Project Structure
+![Project Structure](assets/1_project_structure.png)
+
+
+
+![Selenium Structure](assets/selenium_structure.jpg)
+
+
+
+
+## 2. 🧠 Features of This Framework
+
+1. ✅ Modular Pytest + Selenium setup
+2. ✅ CLI browser and headless test control
+3. ✅ Cross-platform ready (Linux, Codespaces, Local)
+4. ✅ Allure reporting support
+5. ✅ GitHub Actions CI/CD integration
+6. ✅ Professional error handling and logging
+7. ✅ Easily extendable for large teams or real-world use
+
+
+## 3. 🚀 Setup Instructions
+
+
+### 3.1 Clone the Repository
+```bash
+git clone https://github.com/YOUR_USERNAME/selenium-automation-framework.git
+cd selenium-automation-framework
+```
+
+### 3.2 Create and Activate Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+##### Reference Image for Activating Virtual Environment.
+![Venv Setup](assets/8_venv.jpg)
+
+### 3.3 Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+##### Reference Image for installing dependencies.
+![Requirements](assets/9_requirements.jpg)
+
+
+
+
+## 4. 🧪 Running the Tests
+
+### 4.1 Basic Test Run (Chrome + Headless)
+```bash
+pytest --browser chrome --headless --alluredir=reports/
+```
+##### Reference Image for test run for headless.
+![Test Run](assets/11_test_pass.jpg)
+
+
+
+### 4.2 Run with Visible Browser (Non-headless)
+```bash
+pytest --browser chrome --alluredir=reports/
+```
+
+
+
+
+## 5. 📊 View Allure Report
+
+
+> Make sure you have Allure installed:
+> [Installation Guide → https://docs.qameta.io/allure/]
+
+### 5.1 To Serve the Report:
+```bash
+allure serve reports/
+```
+
+This opens an interactive test report in your browser.
+## 6. 🛠 Available CLI Options
+
+
+| Argument        | Description                                | Example                       |
+|-----------------|--------------------------------------------|-------------------------------|
+| `--browser`      | Browser to run tests (e.g., chrome)        | `--browserchrome`            |
+| `--headless`     | Run without UI                             | `--headless`                 !
+| `--alluredir`    | Directory to save Allure results           | `--alluredir=reports`        |
+
+## 7. 🔄 CI/CD Integration (GitHub Actions)
+
+This project includes a CI workflow located at:
+
+```
+.github/workflows/selenium-tests.yml
+```
+
+It runs on every push to `main`:
+- ✅ Sets up environment
+- ✅ Installs dependencies
+- ✅ Runs headless tests
+- ✅ Optionally uploads results
+
+> To trigger: simply `git push` your code!
+
+
+
+
+## 8. 🐛 Troubleshooting
+
+All known errors and solutions have been logged in:
+
+```
+troubleshooting_log.md
+```
+
+
+This includes:
+- Chromedriver errors
+- NoSuchElement exceptions
+- GitHub Actions failures
+- Push errors and LFS issues
+
+
+##### Reference Image for chrome installation.
+![Chrome Installation 1](assets/1_chrome_install.jpg)
+![Chrome Installation 2](assets/2_chrome_install.jpg)
+![Chrome Installation 3](assets/3_chrome_install.jpg)
+![Chrome Installation 4](assets/4_chrome_install.jpg)
+![Chrome Installation 5](assets/5_chrome_install.jpg)
+![Chrome Installation 6](assets/6_chrome_install.jpg)
+![Chrome Installation 7](assets/7_chrome_install.jpg)
+
+
+
+
+## 9. 🖼️ Screenshots
+
+
+### 9.1 Allure Report Sample:
+*(Place your screenshot in `assets/` folder and reference it)*
+
+![Allure Report](assets/allure_report_sample.png)
+
+
+
+
+## 10. 📌 Dependencies
+
+- `selenium`
+- `pytest`
+- `webdriver-manager`
+- `allure-pytest`
+
+Install all using:
+```bash
+pip install -r requirements.txt
+```
+
+
+
+
+## 11. 🔖 License
+
+This project is licensed under the **MIT License**.
+Feel free to modify and use for educational or professional use.
+## 12. 👨‍💻 Author
+
+**Saahil Parmar**
+Test Automation Engineer in Progress 💻
+_Reach out via GitHub for collaboration or questions!_
