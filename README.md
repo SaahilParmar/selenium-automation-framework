@@ -8,6 +8,9 @@ A complete **Selenium + Pytest test automation framework** designed for cross-br
 ![Project Structure](assets/1_project_structure.png)
 
 
+
+![selenium_structure](assets/selenium_structure.jpg)
+
 selenium_automation_framework/
 ├── .github/workflows/ # CI workflow (selenium-tests.yml)
 ├── conftest.py # Pytest fixtures for browser setup
