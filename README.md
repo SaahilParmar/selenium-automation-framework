@@ -39,7 +39,7 @@ cd selenium-automation-framework
 python3 -m venv venv
 source venv/bin/activate
 ```
-
+#### Reference Image.
 ![Venv Setup](assets/8_venv.jpg)
 
 ### 3.3 Install Dependencies
