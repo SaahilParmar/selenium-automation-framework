@@ -9,16 +9,8 @@ A complete **Selenium + Pytest test automation framework** designed for cross-br
 
 
 
-![selenium_structure](assets/selenium_structure.jpg)
+![Selenium Structure](assets/selenium_structure.jpg)
 
-selenium_automation_framework/
-├── .github/workflows/ # CI workflow (selenium-tests.yml)
-├── conftest.py # Pytest fixtures for browser setup
-├── requirements.txt # Python dependencies
-├── tests/ # Test cases (e.g. test_login.py)
-├── utils/ # Utility modules (optional)
-├── reports/ # Allure reports (generated after test)
-└── README.md # You're here!
 
 
 
@@ -47,6 +39,8 @@ cd selenium-automation-framework
 python3 -m venv venv
 source venv/bin/activate
 ```
+
+![Venv Setup](assets/8_venv.jpg)
 
 ### 3.3 Install Dependencies
 ```bash
