@@ -1,3 +1,19 @@
+# Ignore downloaded Chrome .deb package used in CI/CD
 google-chrome-stable_current_amd64.deb
+
+# Ignore Python cache and bytecode files
 __pycache__/
 *.pyc
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore test and report artifacts
+reports/
+allure-results/
+allure-report/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
