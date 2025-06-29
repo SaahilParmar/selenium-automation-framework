@@ -1,4 +1,3 @@
-
 # Selenium Automation Framework ✅
 
 A complete **Selenium + Pytest test automation framework** designed for cross-browser testing, Allure reporting, and CI/CD integration with GitHub Actions.
@@ -94,7 +93,7 @@ This opens an interactive test report in your browser.
 
 | Argument        | Description                                | Example                       |
 |-----------------|--------------------------------------------|-------------------------------|
-| `--browser`      | Browser to run tests (e.g., chrome)        | `--browserchrome`            |
+| `--browser`      | Browser to run tests (e.g., chrome)        | `--browser chrome`            |
 | `--headless`     | Run without UI                             | `--headless`                 !
 | `--alluredir`    | Directory to save Allure results           | `--alluredir=reports`        |
 
@@ -184,3 +183,15 @@ Feel free to modify and use for educational or professional use.
 **Saahil Parmar**
 Test Automation Engineer in Progress 💻
 _Reach out via GitHub for collaboration or questions!_
+
+## 🎯 Why This Project?
+
+This project was created to demonstrate my ability to design, build, and maintain a robust, scalable, and professional-grade test automation framework using industry-standard tools. It showcases not only my technical skills in Python, Selenium, and Pytest, but also my understanding of best practices in test architecture, reporting, and CI/CD integration.
+
+Key goals for this project:
+- **Real-World Readiness:** The framework is structured for easy extension and team collaboration, mirroring what’s needed in modern software teams.
+- **Maintainability:** Modular code, clear documentation, and error handling make it easy to update and scale.
+- **Professional Practices:** Includes Allure reporting, GitHub Actions CI/CD, and troubleshooting logs to reflect real engineering workflows.
+- **Cross-Platform Support:** Designed to run seamlessly on local machines, Linux servers, and cloud environments like GitHub Codespaces.
+
+By building this framework from scratch, I aimed to prove my readiness for a test automation engineering role and my commitment to delivering high-quality, maintainable solutions.
