@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class LoginPage:
     """
@@ -20,6 +22,9 @@ class LoginPage:
         self.username_input = (By.NAME, "username")
         self.password_input = (By.NAME, "password")
         self.login_button = (By.CSS_SELECTOR, "button[type='submit']")
+
+        # Locator for the error message
+        self.error_message_locator = (By.XPATH, "//p[contains(@class, 'oxd-alert-content-text')]")
 
     def load(self):
         """
@@ -54,3 +59,19 @@ class LoginPage:
         """
         
         self.driver.find_element(*self.login_button).click()
+
+    def get_error_message(self, timeout=10):
+        """
+        Wait for and return the error message text displayed after a failed login attempt.
+
+        Args:
+            timeout (int): Maximum time to wait for the error message to appear.
+
+        Returns:
+            str: The error message text.
+        """
+        wait = WebDriverWait(self.driver, timeout)
+        error_element = wait.until(
+            EC.visibility_of_element_located(self.error_message_locator)
+        )
+        return error_element.text
