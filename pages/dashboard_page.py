@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class DashboardPage:
     """
@@ -16,14 +18,25 @@ class DashboardPage:
         self.driver = driver
         
         # Locator for the dashboard header element
-        self.dashboard_header = (By.TAG_NAME, "h6")
+        self.dashboard_header = (By.XPATH, "//h6[text()='Dashboard']")
 
     
-    def is_dashboard_visible(self):
+    def is_dashboard_visible(self, timeout=20):
         """
-        Check if the dashboard page is currently visible by verifying the URL.
+        Check if the dashboard page is currently visible by waiting for the dashboard header.
+
+        Args:
+            timeout (int): Maximum time to wait for the dashboard header to appear.
 
         Returns:
-            bool: True if 'dashboard' is in the current URL, False otherwise.
+            bool: True if the dashboard header is visible, False otherwise.
         """
-        return "dashboard" in self.driver.current_url.lower()
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            # Wait for an h6 element that contains the text 'Dashboard'
+            header = wait.until(
+                EC.visibility_of_element_located(self.dashboard_header)
+            )
+            return header.is_displayed()
+        except:
+            return False

@@ -26,9 +26,9 @@ class LoginPage:
         # Locator for the error message
         self.error_message_locator = (By.XPATH, "//p[contains(@class, 'oxd-alert-content-text')]")
 
-        # Add these locators for the "Required" field validation messages
-        self.username_required_locator = (By.XPATH, "//input[@name='username']/ancestor::div[contains(@class,'oxd-input-group')]/following-sibling::span")
-        self.password_required_locator = (By.XPATH, "//input[@name='password']/ancestor::div[contains(@class,'oxd-input-group')]/following-sibling::span")
+        # Robust locators for the "Required" field validation messages
+        self.username_required_locator = (By.XPATH, "(//span[contains(@class,'oxd-input-field-error-message') and text()='Required'])[1]")
+        self.password_required_locator = (By.XPATH, "(//span[contains(@class,'oxd-input-field-error-message') and text()='Required'])[2]")
 
     def load(self):
         """
@@ -99,7 +99,18 @@ class LoginPage:
         """
         try:
             wait = WebDriverWait(self.driver, timeout)
-            element = wait.until(EC.visibility_of_element_located(self.password_required_locator))
-            return "Required" in element.text
-        except:
+            # Wait for any 'Required' message to appear
+            elements = wait.until(
+                EC.presence_of_all_elements_located(
+                    (By.XPATH, "//span[contains(@class,'oxd-input-field-error-message') and text()='Required']")
+                )
+            )
+            # If there are two, the second is for password
+            if len(elements) == 2:
+                return "Required" in elements[1].text
+            # If only one, check if password is blank and username is not
+            elif len(elements) == 1 and self.driver.find_element(*self.password_input).get_attribute("value") == "":
+                return "Required" in elements[0].text
+            return False
+        except Exception:
             return False
