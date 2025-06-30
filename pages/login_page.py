@@ -28,10 +28,12 @@ class LoginPage:
 
     def load(self):
         """
-        Navigate to the OrangeHRM login page.
+        Navigate to the OrangeHRM login page and wait for the username field to be visible.
         """
-        
         self.driver.get("https://opensource-demo.orangehrmlive.com/")
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.username_input)
+        )
 
     def enter_username(self, username):
         """
