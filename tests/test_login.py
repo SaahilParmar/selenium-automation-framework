@@ -42,3 +42,42 @@ def test_login_invalid_credentials(driver):
         EC.visibility_of_element_located((By.XPATH, "//p[contains(@class, 'oxd-alert-content-text')]"))
     )
     assert "Invalid credentials" in error_message.text, "Expected error message not displayed for invalid login."
+
+def test_login_blank_credentials(driver):
+    """
+    Test that login fails when both username and password are blank.
+    Asserts that an error message is displayed.
+    """
+    login_page = LoginPage(driver)
+    login_page.load()
+    login_page.enter_username("")
+    login_page.enter_password("")
+    login_page.click_login()
+    error_message = login_page.get_error_message()
+    assert error_message, "No error message displayed for blank credentials."
+
+def test_login_blank_password(driver):
+    """
+    Test that login fails when password is blank.
+    Asserts that an error message is displayed.
+    """
+    login_page = LoginPage(driver)
+    login_page.load()
+    login_page.enter_username("Admin")
+    login_page.enter_password("")
+    login_page.click_login()
+    error_message = login_page.get_error_message()
+    assert error_message, "No error message displayed for blank password."
+
+def test_login_blank_username(driver):
+    """
+    Test that login fails when username is blank.
+    Asserts that an error message is displayed.
+    """
+    login_page = LoginPage(driver)
+    login_page.load()
+    login_page.enter_username("")
+    login_page.enter_password("admin123")
+    login_page.click_login()
+    error_message = login_page.get_error_message()
+    assert error_message, "No error message displayed for blank username."
