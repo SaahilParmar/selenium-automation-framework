@@ -1,0 +1,40 @@
+# GitHub Actions workflow for running Selenium + Pytest tests with Allure reporting.
+# This workflow triggers on every push and pull request.
+# It sets up Python, installs dependencies, runs tests in headless Chrome, and uploads Allure results.
+
+name: Run Pytest with Selenium
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up the specified Python version
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      # Install project dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Run Pytest with Selenium in headless Chrome and generate Allure results
+      - name: Run tests
+        run: |
+          pytest --browser chrome --headless --alluredir=reports/
+
+      # Upload the Allure results as a workflow artifact
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: reports/
