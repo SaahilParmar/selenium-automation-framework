@@ -26,6 +26,10 @@ class LoginPage:
         # Locator for the error message
         self.error_message_locator = (By.XPATH, "//p[contains(@class, 'oxd-alert-content-text')]")
 
+        # Add these locators for the "Required" field validation messages
+        self.username_required_locator = (By.XPATH, "//input[@name='username']/ancestor::div[contains(@class,'oxd-input-group')]/following-sibling::span")
+        self.password_required_locator = (By.XPATH, "//input[@name='password']/ancestor::div[contains(@class,'oxd-input-group')]/following-sibling::span")
+
     def load(self):
         """
         Navigate to the OrangeHRM login page and wait for the username field to be visible.
@@ -77,3 +81,25 @@ class LoginPage:
             EC.visibility_of_element_located(self.error_message_locator)
         )
         return error_element.text
+
+    def is_username_required_displayed(self, timeout=5):
+        """
+        Check if the 'Required' message is displayed under the username field.
+        """
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.visibility_of_element_located(self.username_required_locator))
+            return "Required" in element.text
+        except:
+            return False
+
+    def is_password_required_displayed(self, timeout=5):
+        """
+        Check if the 'Required' message is displayed under the password field.
+        """
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(EC.visibility_of_element_located(self.password_required_locator))
+            return "Required" in element.text
+        except:
+            return False

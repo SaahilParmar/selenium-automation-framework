@@ -46,38 +46,36 @@ def test_login_invalid_credentials(driver):
 def test_login_blank_credentials(driver):
     """
     Test that login fails when both username and password are blank.
-    Asserts that an error message is displayed.
+    Asserts that 'Required' messages are displayed under both fields.
     """
     login_page = LoginPage(driver)
     login_page.load()
     login_page.enter_username("")
     login_page.enter_password("")
     login_page.click_login()
-    error_message = login_page.get_error_message()
-    assert error_message, "No error message displayed for blank credentials."
+    assert login_page.is_username_required_displayed(), "'Required' message not displayed for blank username."
+    assert login_page.is_password_required_displayed(), "'Required' message not displayed for blank password."
 
 def test_login_blank_password(driver):
     """
     Test that login fails when password is blank.
-    Asserts that an error message is displayed.
+    Asserts that 'Required' message is displayed under the password field.
     """
     login_page = LoginPage(driver)
     login_page.load()
     login_page.enter_username("Admin")
     login_page.enter_password("")
     login_page.click_login()
-    error_message = login_page.get_error_message()
-    assert error_message, "No error message displayed for blank password."
+    assert login_page.is_password_required_displayed(), "'Required' message not displayed for blank password."
 
 def test_login_blank_username(driver):
     """
     Test that login fails when username is blank.
-    Asserts that an error message is displayed.
+    Asserts that 'Required' message is displayed under the username field.
     """
     login_page = LoginPage(driver)
     login_page.load()
     login_page.enter_username("")
     login_page.enter_password("admin123")
     login_page.click_login()
-    error_message = login_page.get_error_message()
-    assert error_message, "No error message displayed for blank username."
+    assert login_page.is_username_required_displayed(), "'Required' message not displayed for blank username."
