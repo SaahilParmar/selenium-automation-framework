@@ -1,12 +1,11 @@
-# Project dependencies for the Selenium automation framework.
-# Install these packages with: pip install -r requirements.txt
+# requirements.txt for Selenium Automation Framework (minimal version)
+# Install all dependencies with: pip install -r requirements.txt
 
-selenium
-pytest
-allure-pytest
-pytest-rerunfailures
-webdriver-manager
+selenium==4.33.0
+webdriver-manager==4.0.2
+pytest==8.4.1
+allure-pytest==2.14.3
+python-dotenv==1.1.1
+requests==2.32.4
 
-# Optional: For type hints and linting (recommended for professional projects)
-# mypy -  tool for checking type hints in Python.
-# flake8 - tool for enforcing coding style in Python.
+# End of requirements.txt
