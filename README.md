@@ -3,6 +3,11 @@
 A complete **Selenium + Pytest test automation framework** designed for cross-browser testing, Allure reporting, and CI/CD integration with GitHub Actions.
 
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/SaahilParmar/selenium-automation-framework/selenium-tests.yml?branch=main)
+![Python Version](https://img.shields.io/badge/python-3.12-blue)
+![License](https://img.shields.io/github/license/SaahilParmar/selenium-automation-framework)
+
+
 ## 1. 📁 Project Structure
 ![Project Structure](assets/1_project_structure.png)
 
@@ -146,6 +151,10 @@ This includes:
 
 ## 9. 🖼️ Screenshots
 
+# Install Allure CLI (if not already)
+# Mac: brew install allure
+# Windows: choco install allure
+# Linux: see https://docs.qameta.io/allure/
 
 ### 9.1 Allure Report Sample:
 ![Report 2](assets/report_2.jpg)
