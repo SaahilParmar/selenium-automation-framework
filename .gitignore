@@ -1,6 +1,3 @@
-# Ignore downloaded Chrome .deb package used in CI/CD
-google-chrome-stable_current_amd64.deb
-
 # Ignore Python cache and bytecode files
 __pycache__/
 *.pyc
